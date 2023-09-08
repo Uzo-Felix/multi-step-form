@@ -34,8 +34,6 @@ const Home = () => {
   };
 
   const handleSubmit = () => {
-    // Implement form submission logic here
-    // You can add validation checks as needed
   };
 
   return (

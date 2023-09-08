@@ -1,27 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import AppContext from '../../AppContext';
 import './Plan.css';
 
 const Plan = () => {
-  const [selectedPlan, setSelectedPlan] = useState(null);
-  const [isYearly, setIsYearly] = useState(false);
+  const { selectedPlan, handlePlanSelect, isYearly, setIsYearly, planPrices } = useContext(AppContext);
 
-  const monthlyPlans = [
-    { name: 'Arcade', price: 9 },
-    { name: 'Advanced', price: 12 },
-    { name: 'Pro', price: 15 },
-  ];
 
-  const yearlyPlans = [
-    { name: 'Arcade', price: 90 },
-    { name: 'Advanced', price: 120 },
-    { name: 'Pro', price: 150 },
-  ];
-
-  const plans = isYearly ? yearlyPlans : monthlyPlans;
-
-  const handlePlanSelect = (plan) => {
-    setSelectedPlan(plan);
-  };
+  // const plans = isYearly ? yearlyPlans : monthlyPlans;
 
   return (
     <div>
@@ -41,14 +26,14 @@ const Plan = () => {
       </div>
 
       <div className="plan-cards">
-        {plans.map((plan, index) => (
+        {planPrices.map((plan, index) => (
           <div
             key={index}
             className={`plan-card ${selectedPlan === plan ? 'selected' : ''}`}
             onClick={() => handlePlanSelect(plan)}
           >
             <h3>{plan.name}</h3>
-            <p>{isYearly ? `$${plan.price}/yr` : `$${plan.price}/month`}</p>
+            <p>{isYearly ? `$${plan.yearlyPrice}/yr` : `$${plan.monthlyPrice}/month`}</p>
           </div>
         ))}
       </div>
@@ -56,7 +41,7 @@ const Plan = () => {
       {selectedPlan && (
         <div className="selected-plan">
           <p>You have selected: {selectedPlan.name}</p>
-          <p>Price: {isYearly ? `$${selectedPlan.price}/yr` : `$${selectedPlan.price}/month`}</p>
+          <p>Price: {isYearly ? `$${selectedPlan.yearlyPrice}/yr` : `$${selectedPlan.monthlyPrice}/month`}</p>
         </div>
       )}
     </div>
