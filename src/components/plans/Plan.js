@@ -7,24 +7,12 @@ const Plan = () => {
 
 
   // const plans = isYearly ? yearlyPlans : monthlyPlans;
-
   return (
     <div>
-      <div className="toggle-container">
-        <button
-          onClick={() => setIsYearly(false)}
-          className={!isYearly ? 'active' : ''}
-        >
-          Monthly
-        </button>
-        <button
-          onClick={() => setIsYearly(true)}
-          className={isYearly ? 'active' : ''}
-        >
-          Yearly
-        </button>
-      </div>
-
+      <section>
+        <h1>Select your plan</h1>
+        <p>You have the option of monthly or yearly billing</p>
+      </section>
       <div className="plan-cards">
         {planPrices.map((plan, index) => (
           <div
@@ -38,12 +26,11 @@ const Plan = () => {
         ))}
       </div>
 
-      {selectedPlan && (
-        <div className="selected-plan">
-          <p>You have selected: {selectedPlan.name}</p>
-          <p>Price: {isYearly ? `$${selectedPlan.yearlyPrice}/yr` : `$${selectedPlan.monthlyPrice}/month`}</p>
-        </div>
-      )}
+      <div className="toggle-container">
+        <p>monthly</p>
+        <input onClick={() => setIsYearly(!isYearly)} type="checkbox" id="switch" /><label for="switch">Toggle</label>
+        <p>yearly</p>
+      </div>
     </div>
   );
 };

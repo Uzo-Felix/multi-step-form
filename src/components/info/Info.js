@@ -67,7 +67,7 @@ function Info() {
   };
 
   return (
-    <div className="form-container">
+    <div className="info-container">
       <form onSubmit={handleSubmit}>
         <h1>Personal info</h1>
         <p>Please provide your name, email address, and phone number</p>

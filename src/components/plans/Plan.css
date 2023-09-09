@@ -1,0 +1,148 @@
+/* Style for the plan cards */
+.plan-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.plan-card {
+  flex: 1;
+  padding: 20px;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.plan-card h3 {
+  margin: 0;
+}
+
+.plan-card p {
+  margin: 5px 0;
+}
+
+.plan-card:hover {
+  background-color: #f0f0f0;
+}
+
+.plan-card .selected {
+  background-color: #007bff;
+  color: #fff;
+}
+
+/* Style for the selected plan */
+.selected-plan {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.selected-plan p {
+  margin: 5px 0;
+}
+
+  /* Style for the plan cards */
+
+  .plan-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .plan-card {
+    flex: 1;
+    padding: 20px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .plan-card h3 {
+    margin: 0;
+  }
+  
+  .plan-card p {
+    margin: 5px 0;
+  }
+  
+  .plan-card:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .plan-card.selected {
+    background-color: #007bff;
+    color: #fff;
+  }
+  
+  /* Style for the selected plan */
+  .selected-plan {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .selected-plan p {
+    margin: 5px 0;
+  }
+
+  /* Style for the toggle buttons */
+  .toggle-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 1rem 0 1rem 0;
+  }
+  .toggle-container input[type=checkbox] {
+    height: 0;
+    width: 0;
+    visibility: hidden;
+  }
+  
+  .toggle-container label {
+    cursor: pointer;
+    text-indent: -9999px;
+    width: 50px; /* Reduce the width to half */
+    height: 25px; /* Reduce the height to half */
+    background: grey;
+    display: block;
+    border-radius: 25px; /* Adjust the border-radius accordingly */
+    position: relative;
+  }
+  
+  .toggle-container label:after {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 15px; /* Reduce the width to half */
+    height: 15px; /* Reduce the height to half */
+    background: #fff;
+    border-radius: 50%; /* Make the pseudo-element a circle */
+    transition: 0.3s;
+  }
+  
+  .toggle-container input:checked + label {
+    background: #bada55;
+  }
+  
+  .toggle-container input:checked + label:after {
+    left: calc(100% - 5px);
+    transform: translateX(-100%);
+  }
+  
+  .toggle-container label:active:after {
+    width: 20px; /* Adjust the width accordingly */
+    height: 20px; /* Adjust the height accordingly */
+  }
+  
+  
+  
+  

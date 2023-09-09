@@ -1,4 +1,3 @@
-// components/Summary.js
 import React, { useContext } from 'react';
 import AppContext from '../AppContext';
 
@@ -22,7 +21,7 @@ const Summary = () => {
     <div className="summary">
       <h2>Total</h2>
       <h3>{selectedPlan.name} ({isYearly ?`yearly`: `monthly`})</h3>
-      <p>Price: {isYearly ? `$${selectedPlan.yearlyPrice}/yr` : `$${selectedPlan.monthlyPrice}/month`}</p>
+      <p>Price: ${isYearly ? `${selectedPlan.yearlyPrice}/yr` : `${selectedPlan.monthlyPrice}/month`}</p>
         <ul>
           {selectedAddOns.map((id) => {
             const selectedAddOn = addOns.find((addOn) => addOn.id === id);

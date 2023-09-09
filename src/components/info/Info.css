@@ -1,0 +1,57 @@
+  form h1, label{
+    color: var(--marine-blue);
+    margin-bottom: 0.3rem;
+  }
+
+  form h1{
+    margin-bottom: 0.5rem;
+  }
+  
+  form p{
+    margin-bottom: 1rem;
+  }
+
+
+  /* Form groups */
+  .form-group {
+    margin-bottom: 20px;
+  }
+
+
+  
+  /* Labels */
+  .form-group label {
+    font-weight: bold;
+  }
+  
+  /* Input fields */
+  input[type="text"],
+  input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  /* Error messages */
+  .error {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+  }
+  
+  /* Submit button */
+  button[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #0056b3;
+  }
+  

@@ -16,7 +16,6 @@ const Form = ({ step, formData, onChange }) => {
       {step === 3 && (
         <Addons />
       )}
-      {/* Add more fields for each step */}
     </div>
   );
 };
