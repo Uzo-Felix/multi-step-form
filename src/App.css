@@ -1,0 +1,114 @@
+
+
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+/* step styling */
+.steps {
+  display: flex;
+  align-items: center;
+  flex: 0.9;
+  flex-direction: column;
+  margin: 1rem;
+  border:none;
+  border-radius: 1rem;
+  padding-top: 2.5rem;
+  gap: 2px;
+  background-image: url('../assets/images/bg-sidebar-desktop.svg'); 
+  background-size:cover; 
+  background-repeat: no-repeat; 
+  /* background-attachment:fixed; */
+  background-position: center;
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  width: 80%;
+  height: 10%;
+  margin: 2px 2px 5px 2px;
+  cursor: pointer;
+  font-size: 0.5rem;
+  padding: 10px;
+  letter-spacing: 2px;
+}
+
+.step p{
+  color: var(--cool-gray);
+  font-size: 0.8rem;
+}
+
+.step h2{
+  color: var(--alabaster);
+  font-size: 0.8rem;
+}
+
+.step section{
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 2rem;
+  width: 50px; 
+  height: 50px;
+  background-color: transparent; 
+  border: 1.5px solid var(--alabaster);
+  color: var(--alabaster); 
+  border-radius: 50%; 
+}
+
+.circle span{
+  font-size: 12px;
+  font-weight:bold;
+}
+
+.active .circle{
+  background-color: var(--light-blue);
+  color: var(--marine-blue);
+}
+
+
+/* form styling */
+
+.form-container {
+  flex: 2;
+  padding: 3rem 5rem 3rem 5rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: space-between;
+}
+
+.buttons {
+  margin-top: 5rem;
+}
+
+button {
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.prev-button {
+  background-color: var(--light-gray);
+  border: none;
+}
+
+
+.submit-button, .next-button{
+  background-color: var(--marine-blue);
+  color: var(--light-gray);
+  float: right;
+}
+
+
+

@@ -1,9 +1,10 @@
-// pages/index.js
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import './App.css';
 import Step from './components/Step';
 import Form from './components/Form';
 import Summary from './components/Summary';
+import Thank from './components/Thanks';
+import AppContext from './AppContext';
 
 const steps = [
   { title: 'STEP 1', label: 'YOUR INFO' },
@@ -13,8 +14,10 @@ const steps = [
 ];
 
 const Home = () => {
+  const { selectedAddOns, selectedPlan, isYearly, addOns, planPrices } = useContext(AppContext);
   const [currentStep, setCurrentStep] = useState(1);
   const [formData, setFormData] = useState({ name: '', email: '' });
+  const [thanks, setThanks] = useState(false);
 
   const handleNext = () => {
     if (currentStep < steps.length) {
@@ -34,6 +37,7 @@ const Home = () => {
   };
 
   const handleSubmit = () => {
+    setThanks(!thanks);
   };
 
   return (
@@ -51,11 +55,15 @@ const Home = () => {
         ))}
       </div>
       <div className="form-container">
-        {currentStep === 4 ? (
+        {
+          thanks ? (<Thank />):
+          currentStep === 4 ? (
           <Summary formData={formData} />
         ) : (
           <Form step={currentStep} formData={formData} onChange={handleChange} />
         )}
+
+        {!thanks && (
         <div className="buttons">
           {currentStep > 1 && (
             <button className="prev-button" onClick={handlePrev}>
@@ -69,10 +77,11 @@ const Home = () => {
           )}
           {currentStep === 4 && (
             <button className="submit-button" onClick={handleSubmit}>
-              Confirm Order
+              Confirm
             </button>
           )}
         </div>
+        )}
       </div>
     </div>
   );
